@@ -1,3 +1,89 @@
+<<<<<<< HEAD
+# Manual GitHub Upload Instructions
+
+## Files That Need to be Updated on GitHub:
+
+### ✅ **New Files Created:**
+- `build.js` - Custom build script that fixes build issues
+- `BUILD_INSTRUCTIONS.md` - Build troubleshooting guide
+- `FIXED_BUILD_COMMANDS.md` - Complete local development instructions
+
+### ✅ **Updated Files:**
+- `server/index.ts` - Fixed environment variable loading and macOS compatibility
+- `replit.md` - Updated with latest changes and fixes
+
+## 🚀 **Manual Upload Steps:**
+
+### Option 1: Direct GitHub Web Upload
+1. Go to your GitHub repository: `https://github.com/yasgari/CatalystTempView`
+2. Click "Add file" → "Upload files"
+3. Drag and drop these files:
+   - `build.js`
+   - `BUILD_INSTRUCTIONS.md` 
+   - `FIXED_BUILD_COMMANDS.md`
+4. For existing files, navigate to them and click "Edit":
+   - `server/index.ts`
+   - `replit.md`
+5. Commit with message: "Fix macOS compatibility and build issues"
+
+### Option 2: Download and Re-upload
+1. Download the files from this Replit
+2. Extract to your local repository
+3. Commit and push normally:
+   ```bash
+   git add .
+   git commit -m "Fix macOS compatibility and build issues"
+   git push origin main
+   ```
+
+### Option 3: Git Commands (if git unlock works)
+Try unlocking git first:
+```bash
+rm -f .git/index.lock
+git add build.js BUILD_INSTRUCTIONS.md FIXED_BUILD_COMMANDS.md server/index.ts replit.md
+git commit -m "Fix macOS compatibility and build issues"
+git push origin main
+```
+
+## 📋 **Summary of Changes:**
+
+### ✅ **macOS Compatibility Fixed:**
+- Server now uses `localhost` instead of `0.0.0.0` on macOS
+- Fixes `ENOTSUP` socket binding error
+
+### ✅ **Environment Variables Fixed:**
+- Updated dotenv loading to work in both development and production
+- No more "NOT SET" messages for environment variables
+
+### ✅ **Build Process Fixed:**
+- Custom `build.js` script resolves esbuild configuration issues
+- Proper handling of chunk size warnings
+- Enhanced build instructions for customers
+
+### ✅ **Documentation Enhanced:**
+- Complete troubleshooting guides
+- Step-by-step local development instructions
+- Customer-ready deployment documentation
+
+## 🎯 **Customer Benefits:**
+- Application now works seamlessly on macOS
+- Clear instructions for local development
+- Professional build process with proper error handling
+- Ready for production deployment
+
+## 📝 **Commit Message Suggestion:**
+```
+Fix macOS compatibility and build issues
+
+- Add localhost binding for macOS to prevent ENOTSUP errors
+- Fix environment variable loading in production builds
+- Create custom build script to resolve esbuild configuration
+- Add comprehensive troubleshooting documentation
+- Update deployment instructions for customer use
+```
+
+After uploading, your customers will have a fully functional application that works on both macOS and Linux systems with proper environment variable handling and clear setup instructions.
+=======
 # Manual GitHub Upload Guide
 
 Since the automatic push is having authentication issues, here's the easiest way to get your project on GitHub:
@@ -59,3 +145,4 @@ Once uploaded, your repository will contain:
 Your application is complete and running perfectly on port 5000. The deployment documentation is comprehensive and ready for customer use.
 
 **Recommendation**: Use Option 1 (web upload) as it's the quickest and most reliable method.
+>>>>>>> b8f58a662b32de16faedc94ceb30dab479f4d755

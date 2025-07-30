@@ -1,3 +1,82 @@
+<<<<<<< HEAD
+# GitHub Push Instructions
+
+## Issue Identified:
+You have two different repository names:
+- Original: `CatalystTempView` 
+- Current remote: `catalyst-center-temperature-monitor`
+
+The push failed because your local branch is behind the remote branch.
+
+## Solution Steps:
+
+### Step 1: Pull Remote Changes First
+```bash
+# Pull the latest changes from GitHub
+git pull origin main --allow-unrelated-histories
+```
+
+### Step 2: Add Your New Files
+```bash
+# Add the new files we created
+git add build.js BUILD_INSTRUCTIONS.md FIXED_BUILD_COMMANDS.md MANUAL_GITHUB_UPLOAD.md PUSH_TO_GITHUB.md
+git add server/index.ts replit.md
+```
+
+### Step 3: Commit and Push
+```bash
+# Commit your changes
+git commit -m "Fix macOS compatibility and build issues
+
+- Add localhost binding for macOS to prevent ENOTSUP errors  
+- Fix environment variable loading in production builds
+- Create custom build script to resolve esbuild configuration
+- Add comprehensive troubleshooting documentation
+- Update deployment instructions for customer use"
+
+# Push to GitHub
+git push origin main
+```
+
+## Alternative: Force Push (Use with Caution)
+If you're sure your local version is the correct one:
+```bash
+git push origin main --force
+```
+
+## Alternative: Manual Upload via GitHub Web
+1. Go to https://github.com/yasgari/catalyst-center-temperature-monitor
+2. Upload these files manually:
+   - `build.js`
+   - `BUILD_INSTRUCTIONS.md` 
+   - `FIXED_BUILD_COMMANDS.md`
+   - `MANUAL_GITHUB_UPLOAD.md`
+   - `PUSH_TO_GITHUB.md`
+3. Edit these files directly on GitHub:
+   - `server/index.ts`
+   - `replit.md`
+
+## Files to Upload:
+
+### New Files Created:
+- ✅ `build.js` - Custom build script that fixes build configuration
+- ✅ `BUILD_INSTRUCTIONS.md` - Build troubleshooting guide  
+- ✅ `FIXED_BUILD_COMMANDS.md` - Complete local development setup
+- ✅ `MANUAL_GITHUB_UPLOAD.md` - GitHub upload instructions
+- ✅ `PUSH_TO_GITHUB.md` - This file with push instructions
+
+### Updated Files:
+- ✅ `server/index.ts` - Fixed environment variables and macOS compatibility
+- ✅ `replit.md` - Updated project documentation
+
+## What These Changes Fix:
+- **macOS Socket Error**: Server now uses localhost instead of 0.0.0.0
+- **Environment Variables**: Proper dotenv loading in production
+- **Build Issues**: Custom build script resolves esbuild configuration problems  
+- **Documentation**: Complete customer-ready setup guides
+
+Try the pull command first, then add and commit your changes. If git operations continue to have issues, use the GitHub web interface to upload the files manually.
+=======
 # Quick GitHub Push Guide
 
 ## Option 1: Use Replit's Built-in GitHub Integration (Easiest)
@@ -66,3 +145,4 @@ Your customers will have access to:
 - Production-ready configuration
 
 Repository URL will be: `https://github.com/YOUR_USERNAME/catalyst-center-temperature-monitor`
+>>>>>>> b8f58a662b32de16faedc94ceb30dab479f4d755

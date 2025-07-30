@@ -2,10 +2,9 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
-// Load environment variables in production
-if (process.env.NODE_ENV === 'production') {
-  require('dotenv').config();
-}
+// Load environment variables in production and development
+import dotenv from 'dotenv';
+dotenv.config();
 
 // Log Catalyst Center configuration status for debugging
 console.log('Catalyst Center Configuration:', {

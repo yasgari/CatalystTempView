@@ -41,7 +41,7 @@ A comprehensive React-based web application for monitoring and reporting tempera
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/[your-username]/catalyst-center-temperature-monitor.git
+git clone https://github.com/yasgari/catalyst-center-temperature-monitor.git
 cd catalyst-center-temperature-monitor
 ```
 
@@ -92,7 +92,7 @@ docker run -p 5000:5000 \
 ### Option 2: Traditional Server Deployment
 ```bash
 # On your target server
-git clone https://github.com/[your-username]/catalyst-center-temperature-monitor.git
+git clone https://github.com/yasgari/catalyst-center-temperature-monitor.git
 cd catalyst-center-temperature-monitor
 npm install
 npm run build

@@ -21,9 +21,16 @@ try {
 
 console.log('🔨 Building backend with esbuild...');
 try {
-  execSync('esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outfile=dist/index.js --define:process.env.NODE_ENV=\'"production"\'', { stdio: 'inherit' });
+  // Try npx first, then direct esbuild command
+  try {
+    execSync('npx esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outfile=dist/index.js --define:process.env.NODE_ENV=\'"production"\'', { stdio: 'inherit' });
+  } catch (npxError) {
+    console.log('Trying direct esbuild command...');
+    execSync('esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outfile=dist/index.js --define:process.env.NODE_ENV=\'"production"\'', { stdio: 'inherit' });
+  }
 } catch (error) {
   console.error('Backend build failed:', error.message);
+  console.error('Make sure to run "npm install" first to install dependencies.');
   process.exit(1);
 }
 

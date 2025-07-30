@@ -9,10 +9,10 @@
 ### Build the Application:
 ```bash
 # Build frontend
-vite build
+npx vite build
 
 # Build backend with proper dotenv handling
-esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outfile=dist/index.js --define:process.env.NODE_ENV='"production"'
+npx esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outfile=dist/index.js --define:process.env.NODE_ENV='"production"'
 ```
 
 ### Run the Application:

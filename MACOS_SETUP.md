@@ -56,13 +56,14 @@ serving on localhost:5000
 
 ## Troubleshooting:
 
-### If you get "vite: command not found":
+### If you get "vite: command not found" or "esbuild: command not found":
 ```bash
 # Make sure dependencies are installed
 npm install
 
-# Check if vite is installed
+# Check if build tools are installed
 npx vite --version
+npx esbuild --version
 ```
 
 ### If environment variables show "NOT SET":

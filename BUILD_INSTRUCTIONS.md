@@ -21,10 +21,10 @@ node build.js
 **Option 2: Run build commands separately**
 ```bash
 # Build frontend
-vite build
+npx vite build
 
 # Build backend (fixed command)
-esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outfile=dist/index.js
+npx esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outfile=dist/index.js --define:process.env.NODE_ENV='"production"'
 ```
 
 **Option 3: Ignore the warnings and run**

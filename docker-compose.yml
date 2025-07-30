@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  catalyst-temp-monitor:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - CATALYST_CENTER_BASE_URL=${CATALYST_CENTER_BASE_URL}
+      - CATALYST_CENTER_USERNAME=${CATALYST_CENTER_USERNAME}
+      - CATALYST_CENTER_PASSWORD=${CATALYST_CENTER_PASSWORD}
+      - DATABASE_URL=${DATABASE_URL:-}
+    env_file:
+      - .env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/dashboard/stats"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - catalyst-network
+
+  # Optional: PostgreSQL database
+  # postgres:
+  #   image: postgres:15-alpine
+  #   environment:
+  #     POSTGRES_DB: temperature_monitoring
+  #     POSTGRES_USER: catalyst_user
+  #     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+  #   networks:
+  #     - catalyst-network
+
+networks:
+  catalyst-network:
+    driver: bridge
+
+# volumes:
+#   postgres_data:

@@ -24,7 +24,7 @@ node build.js
 npx vite build
 
 # Build backend (fixed command)
-npx esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outfile=dist/index.js --define:process.env.NODE_ENV='"production"'
+npx esbuild server/index.ts --platform=node --bundle --format=esm --outfile=dist/index.js --external:express --external:dotenv --external:drizzle-orm --external:@neondatabase/serverless --external:passport --external:connect-pg-simple --external:memorystore --external:express-session --external:puppeteer --external:jspdf --external:jspdf-autotable --external:nanoid --external:zod --external:drizzle-zod
 ```
 
 **Option 3: Ignore the warnings and run**

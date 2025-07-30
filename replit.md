@@ -121,3 +121,6 @@ The application is designed with a clear separation between frontend and backend
 - PDF reports generate with actual temperature data points extracted from switches
 - System automatically detects and uses Catalyst Center when properly configured
 - Ready for production use with real Catalyst Center endpoint (requires correct base URL configuration)
+- ✓ Fixed esbuild configuration issues - replaced problematic --packages=external with explicit external dependencies
+- ✓ Enhanced build process with npx commands for reliable local development
+- ✓ Comprehensive troubleshooting documentation for macOS compatibility

@@ -21,8 +21,8 @@ try {
 
 console.log('🔨 Building backend with esbuild...');
 try {
-  // Use npx with corrected esbuild options
-  execSync('npx esbuild server/index.ts --platform=node --bundle --format=esm --outfile=dist/index.js --external:express --external:dotenv --external:drizzle-orm --external:@neondatabase/serverless --external:passport --external:connect-pg-simple --external:memorystore --external:express-session --external:puppeteer --external:jspdf --external:jspdf-autotable --external:nanoid --external:zod --external:drizzle-zod', { stdio: 'inherit' });
+  // Use npx with comprehensive externals to avoid bundling complex dependencies
+  execSync('npx esbuild server/index.ts --platform=node --bundle --format=esm --outfile=dist/index.js --external:express --external:dotenv --external:drizzle-orm --external:@neondatabase/serverless --external:passport --external:connect-pg-simple --external:memorystore --external:express-session --external:puppeteer --external:jspdf --external:jspdf-autotable --external:nanoid --external:zod --external:drizzle-zod --external:lightningcss --external:@babel/* --external:tailwindcss --external:autoprefixer --external:postcss --external:vite --external:@vitejs/* --external:@radix-ui/* --external:react --external:react-dom --external:@tanstack/* --external:@hookform/* --external:@types/*', { stdio: 'inherit' });
 } catch (error) {
   console.error('Backend build failed:', error.message);
   console.error('Make sure to run "npm install" first to install dependencies.');

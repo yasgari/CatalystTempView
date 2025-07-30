@@ -9,8 +9,12 @@
 
 ### Quick Fix:
 
-**Option 1: Use the custom build script**
+**Option 1: Use the custom build script (after npm install)**
 ```bash
+# Install dependencies first
+npm install
+
+# Then build
 node build.js
 ```
 

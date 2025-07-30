@@ -6,9 +6,16 @@ import { readFileSync, writeFileSync } from 'fs';
 
 console.log('🔨 Building frontend with Vite...');
 try {
-  execSync('vite build', { stdio: 'inherit' });
+  // Try npx first, then direct vite command
+  try {
+    execSync('npx vite build', { stdio: 'inherit' });
+  } catch (npxError) {
+    console.log('Trying direct vite command...');
+    execSync('vite build', { stdio: 'inherit' });
+  }
 } catch (error) {
   console.error('Frontend build failed:', error.message);
+  console.error('Make sure to run "npm install" first to install dependencies.');
   process.exit(1);
 }
 
